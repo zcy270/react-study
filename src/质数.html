@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>质数</title>
+    <style>
+        .tab-head {
+            list-style-type: none;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            background: #FF4878;
+            padding: 0;
+            overflow: auto;
+        }
+
+        .tab-head-item {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 0 auto;
+            -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+            color: white;
+            padding: 0 5px;
+        }
+        .box{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入一个" id="inp">
+    <button>检测</button>
+    <div class="box">
+        <ul class="tab-head">
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+            <li class="tab-head-item">兴趣爱好</li>
+        </ul>
+    </div>
+</body>
+<script>
+    var btn = document.querySelectorAll('button')[0];
+    btn.onclick = function () {
+        var inp = document.querySelectorAll('#inp')[0].value;
+        console.log(inp.length)
+        if (inp > 1 && parseInt(inp) == inp) {
+            console.log(typeof inp)
+            for (var i = 2; i <= inp; i++) {
+                if (Number(inp) % i == 0) {
+                    console.log(i)
+                    alert("不是");
+                    return
+                } else {
+                    alert("是");
+                    return
+                }
+            }
+        } else {
+            inp = ''
+            alert('请输入一个大于1的数字');
+        }
+    }
+
+</script>
+
+</html>
